@@ -1,0 +1,73 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+.container {
+    max-width: 600px;
+    margin: auto;
+}
+
+.results{
+    max-width: 1500px;
+    margin: auto;
+}
+label {
+    display: flex;
+    margin: 10px 0 5px;
+}
+button {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+}
+input{
+    display: flex;
+}
+
+
+.datos{
+    width: 80%;
+    margin: auto;
+    float: left;
+}
+.datos input{
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+}
+.datos2{
+    width: 20%;
+    margin: auto;
+    float: left;
+}
+
+.datos2 input{
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+}
+
+.datos3{
+    float: left;
+    width: 100%;
+}
+
+.datos3 input{
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #45a049;
+}
+.results {
+    margin-top: 20px;
+}
+

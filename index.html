@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/estilos.css">
+    <title>Subneteo de Redes</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Subneteo de Redes</h1>
+        <div class="datos">
+            <label for="ip">Dirección IP:</label>
+            <input type="text" id="ip" placeholder="Ej: 192.168.1.1">
+        </div>
+        <div class="datos2">    
+            <label for="prefix">Prefijo:</label>
+            <input type="number" id="prefix" placeholder="Ej: 24" min="0" max="32">
+        </div>
+        
+        <div class="datos3">
+            <label for="hosts">Cantidad de Hosts:</label>
+            <input type="number" id="hosts" placeholder="Ej: 50" min="1">
+        </div>
+
+        <button onclick="calcularSubneteo()">Calcular</button>
+        <button onclick="resetearFormulario()">Calcular Otro Subneteo</button>
+    </div>
+
+    <center>
+        <div class="results">
+            <h2>Resultados:</h2>
+            <table id="results-table">
+                <thead>
+                    <tr>
+                        <th>Hosts Solicitados --</th>
+                        <th>Hosts Encontrados --</th>
+                        <th>Dirección de Red --</th>
+                        <th>Prefijo --</th>
+                        <th>Máscara de Subred Actual --</th>
+                        <th>Nueva Submáscara --</th>
+                        <th>Nuevo Prefijo --</th>
+                        <th>Primera IP Utilizable --</th>
+                        <th>Última IP Utilizable --</th>
+                        <th>Broadcast</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Resultados aparecerán aquí -->
+                </tbody>
+            </table>
+        </div><br>
+    </center>
+    <hr>
+    <center>
+        <div class="procedimientos">
+            <h2>Procedimientos:</h2>
+            <table id="procs-table">
+                <thead>
+                    <tr>
+                        <br>
+                        <th>(2^m)-2 --</th>
+                        <th>Mascara subred actual binario</th>
+                        <th>Nueva mascara de subred</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                </tbody>
+            </table>
+        </div>
+    </center>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
