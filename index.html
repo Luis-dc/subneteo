@@ -9,22 +9,24 @@
 <body>
     <div class="container">
         <h1>Subneteo de Redes</h1>
+
         <div class="datos">
             <label for="ip">Dirección IP:</label>
             <input type="text" id="ip" placeholder="Ej: 192.168.1.1">
         </div>
+
         <div class="datos2">    
             <label for="prefix">Prefijo:</label>
             <input type="number" id="prefix" placeholder="Ej: 24" min="0" max="32">
         </div>
-        
+
         <div class="datos3">
-            <label for="hosts">Cantidad de Hosts:</label>
-            <input type="number" id="hosts" placeholder="Ej: 50" min="1">
+            <label for="numSubnets">Cantidad de Subnets a Calcular:</label>
+            <input type="number" id="numSubnets" placeholder="Ej: 5" min="1">
         </div>
 
-        <button onclick="calcularSubneteo()">Calcular</button>
-        <button onclick="resetearFormulario()">Calcular Otro Subneteo</button>
+        <button onclick="definirSubnets()">Definir Subnets</button>
+        <button onclick="resetearFormulario()">Resetear</button>
     </div>
 
     <center>
@@ -33,15 +35,15 @@
             <table id="results-table">
                 <thead>
                     <tr>
-                        <th>Hosts Solicitados --</th>
-                        <th>Hosts Encontrados --</th>
-                        <th>Dirección de Red --</th>
-                        <th>Prefijo --</th>
-                        <th>Máscara de Subred Actual --</th>
-                        <th>Nueva Submáscara --</th>
-                        <th>Nuevo Prefijo --</th>
-                        <th>Primera IP Utilizable --</th>
-                        <th>Última IP Utilizable --</th>
+                        <th>Hosts Solicitados</th>
+                        <th>Hosts Encontrados</th>
+                        <th>Dirección de Red</th>
+                        <th>Prefijo</th>
+                        <th>Máscara de Subred Actual</th>
+                        <th>Nueva Submáscara</th>
+                        <th>Nuevo Prefijo</th>
+                        <th>Primera IP Utilizable</th>
+                        <th>Última IP Utilizable</th>
                         <th>Broadcast</th>
                     </tr>
                 </thead>
@@ -49,8 +51,29 @@
                     <!-- Resultados aparecerán aquí -->
                 </tbody>
             </table>
-        </div><br>
+        </div>
     </center>
+
+    <center>
+        <table id="enlaces-table">
+            <h2>Enlaces</h2>
+            <thead>
+                <tr>
+                    <th>Cantidad de Enlaces</th>
+                    <th>Dirección de Red</th>
+                    <th>Prefijo</th>
+                    <th>Máscara de Subred</th>
+                    <th>Primera IP Utilizable</th>
+                    <th>Última IP Utilizable</th>
+                    <th>Broadcast</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Aquí se agregarán dinámicamente las filas con los cálculos de enlaces -->
+            </tbody>
+        </table>
+    </center>
+    
     <hr>
     <center>
         <div class="procedimientos">
@@ -58,8 +81,7 @@
             <table id="procs-table">
                 <thead>
                     <tr>
-                        <br>
-                        <th>(2^m)-2 --</th>
+                        <th>(2^m)-2</th>
                         <th>Mascara subred actual binario</th>
                         <th>Nueva mascara de subred</th>
                     </tr>
@@ -69,6 +91,58 @@
                 </tbody>
             </table>
         </div>
+    </center>
+
+    <center>
+        <div class="flsm">
+            <h2>Direcciones de Red</h2>
+            
+            <div id="vlsm-subnets">
+                
+            </div>
+        </div>
+    </center>
+    
+    
+    <center>
+        <div class="container">
+            <h1>Calculadora FLSM</h1>
+    
+            <div class="datos">
+                <label for="ip">Dirección de Red:</label>
+                <input type="text" id="dire" placeholder="Ej: 192.168.1.0">
+            </div>
+    
+            <div class="datos2">    
+                <label for="prefix">Prefijo:</label>
+                <input type="number" id="prefix2" placeholder="Ej: 24" min="0" max="32">
+            </div>
+    
+            <div class="datos3">
+                <label for="numSubnets">Cantidad de Subredes:</label>
+                <input type="number" id="numSubnets2" placeholder="Ej: 4" min="1">
+            </div>
+    
+            <button onclick="calcularFLSM()">Calcular FLSM</button>
+            <button onclick="resetearFormulario2()">Resetear</button>
+            
+        </div>
+    
+        <table id="flsm-table">
+            <thead>
+                <tr>
+                    <th>Subred</th>
+                    <th>Desde</th>
+                    <th>Hasta</th>
+                    <th>Broadcast</th>
+                    <th>Máscara de Subred</th>
+                    <th>Cantidad de Hosts</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Aquí se agregarán las filas con los resultados -->
+            </tbody>
+        </table>
     </center>
 
     <script src="js/script.js"></script>
